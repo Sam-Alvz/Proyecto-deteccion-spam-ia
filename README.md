@@ -1,2 +1,40 @@
-# Proyecto-deteccion-spam-ia
-Clasificación y detección de sms spam isando modelos preentrenados de Hugging Face
+# Clasificación y Detección Automática de SMS Spam mediante Modelos Preentrenados de Hugging Face
+
+*Nombre del alumno:* Angélica Samantha Álvarez Herrera  
+*Matrícula:* AL07182919  
+*Materia:* Gestión de Proyectos de Inteligencia Artificial  
+
+---
+
+## 1. Descripción del Proyecto
+Este proyecto evalúa y compara el desempeño de tres modelos preentrenados de Procesamiento de Lenguaje Natural (NLP) del ecosistema Hugging Face Hub para clasificar mensajes de texto en dos categorías: *Ham (Mensaje legítimo)* o *Spam (Mensaje no deseado o malicioso)*.
+
+El objetivo principal es analizar el equilibrio (trade-off) entre la *precisión* de los modelos y su *latencia (tiempo de respuesta)* en un entorno de prototipado rápido utilizando Google Colab con aceleración por GPU (NVIDIA T4).
+
+---
+
+## 2. Estructura del Dataset
+Se utilizó el dataset *UCI SMS Spam Collection* disponible en el ecosistema Hugging Face:
+* *Total de registros:* 5,572 mensajes (4,825 Ham y 747 Spam).
+* *Campos principales:*
+  * text (string): Cuerpo del mensaje SMS.
+  * label (int): Categoría numérica (0 = Ham, 1 = Spam).
+
+---
+
+## 3. Resultados de la Evaluación Comparativa
+La prueba se realizó sobre una muestra representativa de 500 mensajes procesados por GPU:
+
+| Modelo | Accuracy | Precision | Recall | F1-Score | Latencia Promedio (ms/msg) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| *BERT-Tiny* | 0.9840 | 0.9655 | 0.9032 | 0.9333 | *2.92 ms* |
+| *DistilRoBERTa* | *1.0000* | *1.0000* | *1.0000* | *1.0000* | 6.21 ms |
+| *RoBERTa-Base* | 0.9940 | 0.9683 | 0.9839 | 0.9760 | 10.11 ms |
+
+---
+
+## 4. Instrucciones de Ejecución
+1. Clonar este repositorio o descargar los archivos.
+2. Instalar las dependencias listadas en requirements.txt:
+   ```bash
+   pip install -r requirements.txt
