@@ -38,3 +38,11 @@ La prueba se realizó sobre una muestra representativa de 500 mensajes procesado
 2. Instalar las dependencias listadas en requirements.txt:
    ```bash
    pip install -r requirements.txt
+
+3. Abrir el cuaderno de trabajo ubicado dentro del repositorio (Actividad_4.ipynb o notebooks/Actividad_4.ipynb) en Google Colab.
+4. Asegurarse de activar la GPU T4 en Google Colab en: Entorno de ejecución > Cambiar tipo de entorno de ejecución > T4 GPU.
+5. Ejecutar todas las celdas en orden secuencial para reproducir los análisis y los resultados obtenidos.
+
+## 5. Conclusión y Modelo Seleccionado
+Se selecciona el modelo DistilRoBERTa (SharpWoofer/distilroberta-sms-spam-detector) como la mejor solución técnica para un entorno de producción, ya que alcanzó métricas perfectas (F1-Score de 1.0000) con una latencia muy baja de 6.21 ms por mensaje, ofreciendo el equilibrio óptimo entre precisión y rendimiento computacional.
+   
